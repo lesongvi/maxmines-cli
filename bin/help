@@ -1,0 +1,14 @@
+Usage: 'maxmines <site-key>'
+
+<site-key>: Your MaxMines Site Key
+
+Options:
+
+  --username        Set a username for the miner
+  --interval        Interval between updates (logs)
+  --port            Port for the miner server
+  --host            Host for the miner server
+  --threads         Number of threads for the miner
+  --proxy           Proxy socket 5/4, for example: socks5://127.0.0.1:10005
+  --puppeteer-url   URL where puppeteer will point to, by default is miner server (host:port)
+  --miner-url       URL of MaxMines's JavaScript Miner
