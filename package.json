@@ -9,17 +9,17 @@
   "license": "MIT",
   "dependencies": {
     "elegant-spinner": "^1.0.1",
-    "express": "^4.15.4",
-    "log-update": "^2.1.0",
-    "minimist": "^1.2.0",
+    "express": "^4.17.1",
+    "log-update": "^2.3.0",
+    "minimist": "^1.2.5",
     "puppeteer": "^0.10.2",
-    "tty-table": "^2.5.5"
+    "tty-table": "^2.8.13"
   },
   "bin": {
     "maxmines": "./bin/maxmines-cli"
   },
   "devDependencies": {
-    "expect": "^21.1.0",
+    "expect": "^21.2.1",
     "mocha": "^3.5.3"
   },
   "repository": {
