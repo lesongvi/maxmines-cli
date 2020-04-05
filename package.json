@@ -11,7 +11,7 @@
     "elegant-spinner": "^1.0.1",
     "express": "^4.15.4",
     "log-update": "^2.1.0",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.3",
     "puppeteer": "^0.10.2",
     "tty-table": "^2.5.5"
   },
