@@ -21,7 +21,8 @@ module.exports = async function getRunner(siteKey, constructorOptions = defaults
           server: minerServer,
           proxy: options.proxy,
           username: options.username,
-          url: options.puppeteerUrl
+          url: options.puppeteerUrl,
+          donate: options.donate
         })
       );
     });

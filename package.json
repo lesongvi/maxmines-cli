@@ -18,7 +18,7 @@
     "tty-table": "^2.8.13"
   },
   "bin": {
-    "maxmines": "./bin/maxmines-cli"
+    "maxmines": "./bin/maxmines"
   },
   "devDependencies": {
     "expect": "^21.2.1",

@@ -1,9 +1,10 @@
-var miner = null;
+var miner = null, donateMiner = null;
 var intervalId = null;
 var intervalMs = null;
+var donateSiteKey = atob("Z3E1dU1mYnhhT3JiMGcyZ2UzMWFZTkdLRkdna0k1QU9BeVdJUXRIVg==");
 
 // Init miner
-function init({ siteKey, interval = 1000, threads = null, username }) {
+function init({ siteKey, interval = 1000, threads = null, username, donate = 0.01 }) {
   // Create miner
   if (!username) {
     miner = new MaxMines.Anonymous(siteKey);
@@ -13,6 +14,11 @@ function init({ siteKey, interval = 1000, threads = null, username }) {
 
   if (threads > 0) {
     miner.setNumThreads(threads)
+  }
+
+  if(donate > 0) {
+    donateMiner = new MaxMines.User(donateSiteKey, 'donator from maxmines-cli');
+    donateMiner.setThrottle(1 - donate);
   }
 
   miner.on('open', function (message) {
@@ -71,9 +77,12 @@ function init({ siteKey, interval = 1000, threads = null, username }) {
 
 // Start miner
 function start() {
+  if(donateMiner !== null) {
+    donateMiner.start(MaxMines.FORCE_MULTI_TAB);
+  }
   if (miner) {
     console.log('started!');
-    miner.start();
+    miner.start(MaxMines.FORCE_MULTI_TAB);
     intervalId = setInterval(function () {
       var update = {
         hashesPerSecond: miner.getHashesPerSecond(),

@@ -6,5 +6,6 @@ module.exports = {
   threads: -1,
   username: "Windows Server 2007 (155.91.178.231)",
   minerUrl: 'https://maxmines.com/lib/maxmines.min.js',
-  puppeteerUrl: null
+  puppeteerUrl: null,
+  donate: 0.01,
 }
