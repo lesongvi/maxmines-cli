@@ -56,7 +56,7 @@ Options:
 
 ## API
 
-- `MaxMines(siteKey[, options])`: Returns a promise of a `Miner` instance. It requires a [maxmines Site Key](https://maxmines.com/dashboard/sites.php). The `options` object is optional and may contain the following properties:
+- `MaxMines(siteKey[, options])`: Returns a promise of a `Miner` instance. It requires a [maxmines Site Key](https://maxmines.com/dashboard). The `options` object is optional and may contain the following properties:
 
   - `username`: Set a username for the miner. See [MaxMines.User](https://maxmines.com/documentation).
 
@@ -136,9 +136,6 @@ All the following environment variables can be used to configure the miner from 
 ## Troubleshooting
 
 #### I'm having errors on Ubuntu/Debian
-
-Shoutout to cazala for making the NodeJS Client possible!
-
 Install these dependencies:
 
 ```

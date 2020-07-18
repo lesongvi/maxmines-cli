@@ -7,6 +7,8 @@ const logUpdate = require('log-update');
 const Table = require('tty-table');
 const spinner = require('elegant-spinner')();
 const readline = require('readline');
+const request = require('axios');
+const { default: Axios } = require('axios');
 
 function help() {
   const text = require('fs').createReadStream(`${__dirname}/help`)
@@ -22,9 +24,14 @@ if (argv.help || argv.h) {
 (async () => {
 
   const siteKey = argv._[0] || process.env.MaxMines_SITE_KEY || defaults.SITE_KEY;
+  var target = 0;
 
   if (!siteKey) {
     console.error('No site key has been set up, please set "SITE_KEY" or give an argument to the binary');
+    help();
+    return;
+  } else if(siteKey.length !== 40) {
+    console.error('Invalid site key');
     help();
     return;
   }
@@ -106,11 +113,12 @@ function logger(siteKey, options) {
       { value: 'Total' },
       { value: 'Accepted' }
     ], [
-        [data.hashesPerSecond.toFixed(1), data.totalHashes, data.acceptedHashes]
+        [data.hashesPerSecond.toFixed(1), data.totalHashes, data.acceptedHashes, ]
       ]);
 
     return `
 Site key: ${siteKey}
+${options.username && `Username: ${options.username}`}
 ${t.render()}
 
 ${data.running ? spinner() : 'Stopped'} | Listening on ${options.host}:${options.port}${options.proxy ? ` | Proxy: ${options.proxy}` : ''} | ${data.threads || 0} Threads${data.autoThreads ? ' (auto)' : ''}

