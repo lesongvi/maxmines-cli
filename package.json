@@ -8,11 +8,17 @@
   },
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
+    "braces": "^2.3.1",
+    "debug": "^2.6.9",
+    "diff": "^3.5.0",
     "elegant-spinner": "^1.0.1",
     "express": "^4.17.1",
+    "glob-parent": "^5.1.2",
+    "growl": "^1.9.2",
     "log-update": "^2.3.0",
     "minimist": "^1.2.5",
+    "mixme": "^0.5.2",
     "puppeteer": "^1.13.0",
     "request": "^2.88.2",
     "tty-table": "^2.8.13"
