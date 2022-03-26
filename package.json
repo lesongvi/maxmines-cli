@@ -18,7 +18,7 @@
     "glob-parent": "^5.1.2",
     "growl": "^1.10.0",
     "log-update": "^2.3.0",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "mixme": "^0.5.2",
     "puppeteer": "^1.13.0",
     "request": "^2.88.2",
